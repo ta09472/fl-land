@@ -43,21 +43,30 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className=" flex-col justify-center p-80">
-        <section className="" id="home">
+      <div className="flex flex-col gap-4 px-80 mb-4">
+        <section className=" flex justify-center py-96" id="home">
           {`우리는 ${words.at(wordId)}의 전문가 `}
           <br />
           Festival Land 입니다.
         </section>
 
-        <section className=" py-96" id="portfolio">
+        <section
+          className=" flex justify-center py-96  border border-slate-400 rounded-xl"
+          id="portfolio"
+        >
           포트폴리오 영역입니다.
         </section>
 
-        <section className=" py-96" id="history">
+        <section
+          className=" flex justify-center py-96  border border-slate-400 rounded-xl"
+          id="history"
+        >
           히스토리 영역입니다.
         </section>
-        <section className=" py-96" id="contact">
+        <section
+          className=" flex justify-center py-96  border border-slate-400 rounded-xl"
+          id="contact"
+        >
           연락 영역입니다.
         </section>
       </div>
