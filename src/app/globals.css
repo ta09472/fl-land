@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 html {
+  scroll-padding: 4rem;
   scroll-behavior: smooth;
+}
+
+.full {
 }
