@@ -22,7 +22,7 @@ export default function Home() {
           연락 영역입니다.
         </section>
       </div>
-      <footer className=" flex flex-col px-64 py-4   text-slate-700">
+      <footer className=" flex flex-col px-64 py-4 bg-slate-50   text-slate-700">
         <span>E-mail : festival-land@gmail.com</span>
 
         <span>Copyright 2024. Festival Land. All Rights Reserved.</span>
