@@ -31,11 +31,13 @@ export default function Hero() {
     >
       <div className="text-center">
         <div className="font-extrabold text-3xl md:text-4xl [text-wrap:balance] text-white">
-          우리는
+          {`우리는 `}
           <span className="text-indigo-500 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
-            <ul className="animate-text-slide-4 text-left leading-tight [&_li]:block">
+            <ul className="animate-text-slide-4 leading-tight [&_li]:block">
               {words.map((v) => (
-                <li key={v}>{v}</li>
+                <li key={v} className="flex flex-row">
+                  {v}
+                </li>
               ))}
               <li aria-hidden="true">{words.at(0)}</li>
             </ul>
