@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Portfolio from "./components/Portfolio";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import History from "./components/History";
 
 const Contact = dynamic(

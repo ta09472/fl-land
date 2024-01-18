@@ -45,9 +45,11 @@ export default function Hero() {
           의 전문가
         </div>
         <br />
-        <p className="font-extrabold text-[3rem]">Festival Land 입니다.</p>
+        <p className="font-extrabold text-[2.5rem] lg:text-[3rem]">
+          Festival Land 입니다.
+        </p>
         <br />
-        <p className=" px-[45.5rem] pt-16 text-lg opacity-80 text-left">
+        <p className="px-4 md:px-[18rem] lg:px-52 xl:px-[18rem] pt-16 text-lg opacity-80 text-center max-w-screen-lg mx-auto">
           우리는 맞춤형 솔루션으로 고객의 비전을 실현하고, 낙후된 지역을 생동감
           있는 공간으로 탈바꿈시키는 데 중점을 둡니다. 지속 가능하고 아름다운
           도시 경관 조성을 통해 사람들이 모이고 즐길 수 있는 커뮤니티를 만드는

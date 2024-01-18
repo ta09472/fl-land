@@ -24,8 +24,16 @@ export default function WorkItem({ workId }: Props) {
     <>
       <Card
         hoverable
-        className=" w-72 h-72"
-        cover={<Image alt="example" width={240} height={170} src={""} />}
+        className="w-72 h-72"
+        cover={
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className=" lg:w-[240px] lg:h-[170px] w-[200px] h-[180px] "
+            src={""}
+          />
+        }
         onClick={showModal}
       >
         <div>{workId}</div>

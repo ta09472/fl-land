@@ -63,7 +63,7 @@ export default function Header() {
           <Button
             icon={<MenuOutlined />}
             type="text"
-            style={{ color: "white" }}
+            style={{ color: `${scroll ? "black" : "white"}` }}
           />
         </div>
 
@@ -72,7 +72,11 @@ export default function Header() {
           <NavigationBar isScrolled={scroll} location={activeSection} />
         </div>
 
-        <Button icon={<BulbFilled />} type="text" style={{ color: "white" }} />
+        <Button
+          icon={<BulbFilled />}
+          type="text"
+          style={{ color: `${scroll ? "black" : "white"}` }}
+        />
       </div>
       {/* <BulbOutlined />  */}
     </header>
