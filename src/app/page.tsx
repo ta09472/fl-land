@@ -16,12 +16,12 @@ export default function Home() {
       <div className="flex flex-col">
         <Hero />
         <Portfolio />
-        {/* <section
+        <section
           id="history"
           className=" flex items-center justify-center min-h-screen text-center text-black relative bg-slate-100 py-52 max-md:pb-16 max-md:pt-48 overflow-hidden lqd-is-in-view"
         >
           히스토리 영역입니다.
-        </section> */}
+        </section>
         <Contact />
       </div>
       <footer className=" flex flex-col px-64 py-4 bg-slate-50   text-slate-700">

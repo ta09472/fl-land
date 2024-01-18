@@ -13,23 +13,23 @@ export default function Contact() {
     document.head.appendChild(script);
 
     script.onload = () => {
-      window.kakao.maps.load(() => {
+      (window as any).kakao.maps.load(() => {
         const container = document.getElementById("map");
         const latitude = 35.8804791;
         const longitude = 127.099722;
 
         const options = {
-          center: new window.kakao.maps.LatLng(latitude, longitude),
+          center: new (window as any).kakao.maps.LatLng(latitude, longitude),
           level: 3,
         };
-        const map = new window.kakao.maps.Map(container, options);
+        const map = new (window as any).kakao.maps.Map(container, options);
         // 추가적인 맵 설정 및 이벤트는 여기에 작성합니다.
 
-        const markerPosition = new window.kakao.maps.LatLng(
+        const markerPosition = new (window as any).kakao.maps.LatLng(
           latitude,
           longitude
         );
-        const marker = new window.kakao.maps.Marker({
+        const marker = new (window as any).kakao.maps.Marker({
           position: markerPosition,
         });
         marker.setMap(map);
