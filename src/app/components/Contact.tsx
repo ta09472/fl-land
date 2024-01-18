@@ -44,12 +44,24 @@ export default function Contact() {
     >
       <div className="flex flex-col justify-center items-center gap-4">
         <p className="block text-[2rem] font-extrabold ">찾아오시는 길</p>
-        <div className="flex flex-row items-center">
-          <div className="flex flex-col">
-            <p className="block">주소 : 전북 전주시 덕진구 전미중앙로 21</p>
-          </div>
 
-          <div id="map" className="w-[30rem] h-[30rem]" />
+        <div className="flex flex-row justify-between gap-4">
+          <div className="flex flex-col justify-center  text-left">
+            <p className="block font-semibold text-[1rem]">
+              이메일: ㅁㄴㅇ@ㅁㅇㄴ
+            </p>
+            <p className="block font-semibold text-[1rem]">
+              연락처: 010-231=123123
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div id="map" className="w-[30rem] h-[30rem]" />
+            <div className="flex flex-col">
+              <p className="block font-semibold text-[1rem]">
+                주소 : 전북 전주시 덕진구 전미중앙로 21
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
