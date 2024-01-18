@@ -5,6 +5,8 @@ import Hero from "./components/Hero";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import History from "./components/History";
+import { Suspense } from "react";
+import { Spin } from "antd";
 
 const Contact = dynamic(
   () => import("./components/Contact"), // 카카오 맵 컴포넌트의 경로
@@ -19,7 +21,9 @@ export default function Home() {
         <Hero />
         <Portfolio />
         <History />
-        <Contact />
+        <Suspense fallback={<Spin />}>
+          <Contact />
+        </Suspense>
       </div>
       <Footer />
     </>
