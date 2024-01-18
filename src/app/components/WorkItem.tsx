@@ -5,15 +5,15 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-export default function WorkItem() {
+interface Props {
+  workId: string | number;
+}
+
+export default function WorkItem({ workId }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
   };
 
   const handleCancel = () => {
@@ -28,7 +28,7 @@ export default function WorkItem() {
         cover={<Image alt="example" width={240} height={170} src={""} />}
         onClick={showModal}
       >
-        <div></div>
+        <div>{workId}</div>
         <Card.Meta title="도시" description="www.instagram.com" />
       </Card>
 
@@ -40,9 +40,7 @@ export default function WorkItem() {
         footer={null}
         onCancel={handleCancel}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        {workId}
       </Modal>
     </>
   );

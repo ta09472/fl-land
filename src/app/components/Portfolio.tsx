@@ -27,14 +27,9 @@ export default function Portfolio() {
           onChange={(v) => handleClick(v)}
         />
         <div className="grid grid-cols-4 gap-4">
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
-          <WorkItem />
+          {[1, 2, 3, 4, 5, 6].map((v) => (
+            <WorkItem workId={v} key={v} />
+          ))}
         </div>
         <Button
           className=" self-center"

@@ -54,6 +54,8 @@ export default function Contact() {
               연락처: 010-231=123123
             </p>
           </div>
+          <div className=" border border-l-slate-200"></div>
+
           <div className="flex flex-col items-center">
             <div id="map" className="w-[30rem] h-[30rem]" />
             <div className="flex flex-col">
