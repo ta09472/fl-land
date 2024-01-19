@@ -51,7 +51,7 @@ export default function Header() {
 
   const baseStyle = scroll
     ? `flex flex-row sticky top-0 h-16 px-4 lg:px-12 z-50 items-center justify-between bg-white border border-none transition duration-200 dark:border dark:border-red-600 dark:bg-darkOnyx dark:text-white`
-    : `flex flex-row sticky top-0 h-16 px-4 lg:px-12 z-50 items-center justify-between bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white transition-[background,shadow] group/header [&.lqd-is-sticky]:shadow-[0_4px_20px_rgba(0,0,0,0.03)] [&.lqd-is-sticky]:text-black border border-none transition duration-200`;
+    : `flex flex-row sticky top-0 h-16 px-4 lg:px-12 z-50 items-center justify-between bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white transition-[background,shadow] group/header [&.lqd-is-sticky]:shadow-[0_4px_20px_rgba(0,0,0,0.03)] [&.lqd-is-sticky]:text-black border border-none dark:bg-darkOnyx transition duration-200`;
 
   const style = twMerge(baseStyle);
 

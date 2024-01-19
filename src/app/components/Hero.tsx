@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className=" flex items-center justify-center min-h-screen text-center text-white relative py-52 max-md:pb-16 max-md:pt-48 overflow-hidden bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% dark:bg-darkCharcoal  transition-colors duration-300"
+      className=" flex items-center justify-center min-h-screen text-center text-white relative py-52 max-md:pb-16 max-md:pt-48 overflow-hidden bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% transition-colors duration-300"
     >
       <div className="text-center">
         <div className="font-extrabold text-3xl md:text-4xl [text-wrap:balance] text-white">

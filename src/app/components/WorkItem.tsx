@@ -42,6 +42,7 @@ export default function WorkItem({ workId }: Props) {
 
       <Modal
         centered
+        className="dark:bg-darkSlateGray"
         title="Basic Modal"
         width={"75rem"}
         open={isModalOpen}
