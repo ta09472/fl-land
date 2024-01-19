@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { cookies } from "next/dist/client/components/headers";
+// import { cookies } from "next/dist/client/components/headers";
 
 const inter = Inter({ subsets: ["latin"] });
-const theme = cookies().get("theme");
+// const theme = cookies().get("theme");
 
 export const metadata: Metadata = {
   title: "Festival land",
@@ -14,18 +14,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={theme?.value}>
+    <html lang="en" className={inter.className}>
       <AntdRegistry>
-        <body className={inter.className}>
-          {modal}
-          {children}
-        </body>
+        <body className={inter.className}>{children}</body>
       </AntdRegistry>
     </html>
   );
