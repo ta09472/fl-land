@@ -2,13 +2,11 @@
 
 import { useEffect } from "react";
 
-const API_KEY = "e9635fbfde509e1c6ec7a1510fcee63e";
-
 export default function Contact() {
   useEffect(() => {
     const script = document.createElement("script");
 
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${API_KEY}&autoload=false`;
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`;
     script.async = true;
     document.head.appendChild(script);
 
@@ -40,7 +38,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className=" drop-shadow-sm flex items-center justify-center min-h-screen text-center text-black relative bg-slate-50 py-52 max-md:pb-16 max-md:pt-48 overflow-hidden lqd-is-in-view"
+      className=" drop-shadow-sm flex items-center justify-center min-h-screen text-center text-black relative bg-slate-50 py-52 max-md:pb-16 max-md:pt-48 overflow-hidden lqd-is-in-view dark:bg-darkOnyx dark:text-white transition-colors duration-300"
     >
       <div className="flex flex-col justify-center items-center gap-4">
         <p className="block text-[2rem] font-extrabold ">찾아오시는 길</p>

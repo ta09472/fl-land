@@ -24,7 +24,7 @@ export default function WorkItem({ workId }: Props) {
     <>
       <Card
         hoverable
-        className="w-72 h-72"
+        className="w-72 h-72 dark:bg-darkSlateGray dark:border dark:border-darkCharcoal"
         cover={
           <Image
             alt="example"

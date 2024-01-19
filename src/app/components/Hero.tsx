@@ -27,12 +27,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className=" flex items-center justify-center min-h-screen text-center text-white  relative py-52 max-md:pb-16 max-md:pt-48 overflow-hidden lqd-is-in-view bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+      className=" flex items-center justify-center min-h-screen text-center text-white relative py-52 max-md:pb-16 max-md:pt-48 overflow-hidden bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% dark:bg-darkCharcoal  transition-colors duration-300"
     >
       <div className="text-center">
         <div className="font-extrabold text-3xl md:text-4xl [text-wrap:balance] text-white">
           {`우리는 `}
-          <span className="text-indigo-500 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+          <span className="text-indigo-500 dark:text-darkCrimsonRed transition-colors duration-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
             <ul className="animate-text-slide-4 leading-tight [&_li]:block">
               {words.map((v) => (
                 <li key={v} className="flex flex-row">

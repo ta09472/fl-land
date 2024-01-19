@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import { Spin } from "antd";
 
 const Contact = dynamic(
-  () => import("./components/Contact"), // 카카오 맵 컴포넌트의 경로
+  () => import("./components/Contact"),
   { ssr: false } // 서버 사이드 렌더링 비활성화
 );
 

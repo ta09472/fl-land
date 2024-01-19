@@ -16,12 +16,12 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="flex items-center justify-center min-h-screen text-center text-black relative bg-white max-md:pb-16 max-md:pt-48 overflow-hidden "
+      className="flex items-center justify-center min-h-screen text-center text-black relative bg-white max-md:pb-16 max-md:pt-48 overflow-hidden dark:text-white dark:bg-darkOnyx transition-color duration-300 "
     >
       <div className=" flex flex-col gap-4">
-        <p className=" font-extrabold text-[4rem]">Works</p>
+        <p className=" font-extrabold text-[4rem] ">Works</p>
         <Segmented
-          className=" self-end"
+          className=" self-end dark:bg-darkSlateGray dark:border dark:border-darkCharcoal dark:text-white"
           options={options}
           value={selectedOption}
           onChange={(v) => handleClick(v)}
@@ -32,7 +32,7 @@ export default function Portfolio() {
           ))}
         </div>
         <Button
-          className=" self-center"
+          className=" self-center dark:text-white dark:bg-darkSlateGray dark:border dark:border-darkCharcoal"
           style={{
             fontWeight: 500,
           }}
