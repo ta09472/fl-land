@@ -6,3 +6,16 @@ html {
   scroll-padding: 4rem;
   scroll-behavior: smooth;
 }
+
+.ant-modal-content {
+  @apply dark:bg-darkSlateGray !important; /* Tailwind CSS 유틸리티 */
+}
+
+.ant-modal-title {
+  @apply dark:bg-darkSlateGray !important; /* Tailwind CSS 유틸리티 */
+  @apply dark:text-white !important; /* Tailwind CSS 유틸리티 */
+}
+
+.ant-modal-body {
+  @apply dark:text-white !important; /* Tailwind CSS 유틸리티 */
+}
