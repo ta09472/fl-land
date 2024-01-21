@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import History from "./components/History";
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import { Spin } from "antd";
 
 const Contact = dynamic(

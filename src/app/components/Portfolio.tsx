@@ -5,14 +5,14 @@ import WorkItem from "./WorkItem";
 import { use, useState } from "react";
 import { SegmentedValue } from "antd/es/segmented";
 
-const getData = async () => {
-  const res = await fetch(`http://localhost:3000/api/notion`);
-  return await res.json();
-};
-
 export default function Portfolio() {
+  const getData = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`);
+    return await res.json();
+  };
   const data = use(getData());
-  console.log(data.results);
+  console.log(data);
+
   const options = ["전체", "조경", "조명", "도시재생", "도시경관"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
