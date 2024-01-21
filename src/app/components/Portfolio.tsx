@@ -8,7 +8,7 @@ import { SegmentedValue } from "antd/es/segmented";
 export default function Portfolio() {
   const getData = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`);
+      const res = await fetch(`${process.env.BASE_URL}/api/notion`);
       return await res.json();
     } catch (error) {
       return {};

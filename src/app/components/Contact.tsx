@@ -6,7 +6,7 @@ export default function Contact() {
   useEffect(() => {
     const script = document.createElement("script");
 
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`;
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_KEY}&autoload=false`;
     script.async = true;
     document.head.appendChild(script);
 
