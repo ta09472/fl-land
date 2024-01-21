@@ -45,10 +45,64 @@ export default function WorkItem({ workId }: Props) {
         title="Basic Modal"
         width={"75rem"}
         open={isModalOpen}
-        footer={null}
+        footer={
+          <div className="flex flex- justify-between dark:text-white">
+            <div>#조경 #전주 #야경</div>
+            <div> 전주입니다.</div>
+          </div>
+        }
         onCancel={handleCancel}
+        style={{
+          overflow: "scroll",
+        }}
+        classNames={{
+          body: "h-[50rem] overflow-scroll",
+        }}
       >
-        {workId}
+        <div className="flex-1 border border-red-600  ">
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+          <Image
+            alt="example"
+            width={240}
+            height={170}
+            className="flex-1"
+            src={""}
+          />
+        </div>
       </Modal>
     </>
   );
