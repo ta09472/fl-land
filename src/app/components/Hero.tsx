@@ -45,7 +45,7 @@ export default function Hero() {
           의 전문가
         </div>
         <br />
-        <p className="font-extrabold text-[2.5rem] lg:text-[3rem]">
+        <p className="font-extrabold text-[2rem] lg:text-[3rem]">
           Festival Land 입니다.
         </p>
         <br />

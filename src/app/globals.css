@@ -29,3 +29,11 @@ html {
 .ant-card-meta-title {
   @apply dark:text-white !important; /* Tailwind CSS 유틸리티 */
 }
+
+.ant-dropdown-menu {
+  @apply dark:bg-darkSlateGray !important;
+}
+
+.ant-dropdown-menu-item {
+  @apply dark:text-white !important;
+}

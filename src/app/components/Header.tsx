@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import NavigationBar from "./NavigationBar";
 import { twMerge } from "tailwind-merge";
-import { Button } from "antd";
+import { Button, Dropdown, MenuProps } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { ThemeSwitcher } from "./ThemeSwticher";
+import Link from "next/link";
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -55,6 +56,41 @@ export default function Header() {
 
   const style = twMerge(baseStyle);
 
+  const items: MenuProps["items"] = [
+    {
+      label: (
+        <Link href="#home" className="dark:text-white">
+          Home
+        </Link>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <Link href="#portfolio" className="dark:text-white">
+          Portfolio
+        </Link>
+      ),
+      key: "1",
+    },
+    {
+      label: (
+        <Link href="#history" className="dark:text-white">
+          History
+        </Link>
+      ),
+      key: "2",
+    },
+    {
+      label: (
+        <Link href="#contact" className="dark:text-white">
+          Contact
+        </Link>
+      ),
+      key: "3",
+    },
+  ];
+
   return (
     <header className={style}>
       <h2 className=" font-semibold text-[2rem] dark:text-darkCrimsonRed transition-colors duration-300">
@@ -62,11 +98,17 @@ export default function Header() {
       </h2>
       <div className="flex justify-between items-center w-full">
         <div className="lg:hidden ml-auto">
-          <Button
-            icon={<MenuOutlined />}
-            type="text"
-            style={{ color: `${scroll ? "black" : "white"}` }}
-          />
+          <Dropdown
+            menu={{ items }}
+            trigger={["click"]}
+            className="dark:bg-darkOnyx"
+          >
+            <Button
+              icon={<MenuOutlined />}
+              type="text"
+              style={{ color: `${scroll ? "black" : "white"}` }}
+            />
+          </Dropdown>
         </div>
 
         <div className="hidden lg:flex justify-center w-full">
