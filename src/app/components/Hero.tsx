@@ -49,7 +49,7 @@ export default function Hero() {
           Festival Land 입니다.
         </p>
         <br />
-        <p className="px-4 md:px-[18rem] lg:px-52 xl:px-[18rem] pt-16 text-lg opacity-80 text-center max-w-screen-lg mx-auto">
+        <p className="px-4 md:px-[18rem] lg:px-52 xl:px-[18rem] pt-16 text-sm opacity-80 text-center max-w-screen-lg mx-auto">
           우리는 맞춤형 솔루션으로 고객의 비전을 실현하고, 낙후된 지역을 생동감
           있는 공간으로 탈바꿈시키는 데 중점을 둡니다. 지속 가능하고 아름다운
           도시 경관 조성을 통해 사람들이 모이고 즐길 수 있는 커뮤니티를 만드는
