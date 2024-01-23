@@ -17,7 +17,10 @@ const Contact = dynamic(
 export default function Home() {
   async function getData(): Promise<{ results: Post[] }> {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`,
+        { next: { revalidate: 600000 } }
+      );
       return await res.json();
     } catch (error) {
       // 이거 에러 핸들링 어케함???
