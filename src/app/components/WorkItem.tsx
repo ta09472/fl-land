@@ -1,15 +1,16 @@
 "use client";
 
-import { Card, Modal } from "antd";
+import { Properties } from "@/types/post";
+import { Card, Modal, Tag } from "antd";
 import Image from "next/image";
 
 import { useState } from "react";
 
 interface Props {
-  workId: string | number;
+  properties: Properties;
 }
 
-export default function WorkItem({ workId }: Props) {
+export default function WorkItem({ properties }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -24,31 +25,69 @@ export default function WorkItem({ workId }: Props) {
     <>
       <Card
         hoverable
-        className="w-72 h-72 dark:bg-darkSlateGray dark:border dark:border-darkCharcoal"
+        className="w-72 h-72 dark:bg-darkSlateGray dark:border dark:border-darkCharcoal overflow-hidden flex flex-col"
         cover={
           <Image
             alt="example"
             width={240}
-            height={170}
-            className=" lg:w-[240px] lg:h-[170px] w-[200px] h-[180px] "
-            src={""}
+            height={200}
+            layout="fixed"
+            className=" lg:w-[14rem] lg:h-[12.4rem] w-[10rem] h-[12rem] flex-1"
+            src={properties.사진.files.at(0)?.file?.url ?? ""}
           />
         }
         onClick={showModal}
       >
-        <div>{workId}</div>
-        <Card.Meta title="도시" description="www.instagram.com" />
+        <div className="dark:text-white">
+          {properties.제목.rich_text.map((v) => (
+            <Card.Meta
+              className="dark:text-white"
+              key={v.plain_text}
+              style={{
+                color: "white",
+              }}
+              title={v.plain_text}
+              description={
+                <div className=" flex gap-1">
+                  {properties.유형.multi_select.map(({ id, name, color }) => (
+                    <Tag
+                      color={color}
+                      key={id}
+                      bordered={false}
+                      className="dark:saturate-50 dark:brightness-95"
+                    >
+                      {name}
+                    </Tag>
+                  ))}
+                </div>
+              }
+            />
+          ))}
+        </div>
       </Card>
 
       <Modal
         centered
-        title="Basic Modal"
+        title={properties.제목.rich_text.at(0)?.plain_text}
         width={"75rem"}
         open={isModalOpen}
         footer={
           <div className="flex flex- justify-between dark:text-white">
-            <div>#조경 #전주 #야경</div>
-            <div> 전주입니다.</div>
+            <div>
+              {properties.유형.multi_select.map(({ id, name, color }) => (
+                <Tag
+                  color={color}
+                  key={id}
+                  bordered={false}
+                  className="dark:saturate-50 dark:brightness-95"
+                >
+                  {name}
+                </Tag>
+              ))}
+            </div>
+            <div className="dark:text-white">
+              장소: {properties.장소.title.at(0)?.plain_text}
+            </div>
           </div>
         }
         onCancel={handleCancel}
@@ -60,48 +99,16 @@ export default function WorkItem({ workId }: Props) {
         }}
       >
         <div className="flex-1 border border-red-600  ">
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
-          <Image
-            alt="example"
-            width={240}
-            height={170}
-            className="flex-1"
-            src={""}
-          />
+          {properties.사진.files.map((v) => (
+            <Image
+              alt="example"
+              width={240}
+              height={170}
+              className="flex-1"
+              src={v.file?.url}
+              key={v.file?.url}
+            />
+          ))}
         </div>
       </Modal>
     </>

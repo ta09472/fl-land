@@ -25,3 +25,7 @@ html {
   @apply dark:hover:border !important; /* Tailwind CSS 유틸리티 */
   @apply dark:hover:text-red-300 !important; /* Tailwind CSS 유틸리티 */
 }
+
+.ant-card-meta-title {
+  @apply dark:text-white !important; /* Tailwind CSS 유틸리티 */
+}

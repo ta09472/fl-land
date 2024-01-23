@@ -2,27 +2,33 @@
 import { Button, Segmented } from "antd";
 
 import WorkItem from "./WorkItem";
-import { use, useState } from "react";
+import { useState } from "react";
 import { SegmentedValue } from "antd/es/segmented";
+import { Post } from "@/types/post";
 
-export default function Portfolio() {
-  const getData = async () => {
-    try {
-      const res = await fetch(`${process.env.BASE_URL}/api/notion`);
-      return await res.json();
-    } catch (error) {
-      return {};
-    }
-  };
-  const data = use(getData());
-  console.log(data);
+interface Props {
+  data: Post[];
+}
 
+export default function Portfolio({ data }: Props) {
   const options = ["전체", "조경", "조명", "도시재생", "도시경관"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleClick = (v: SegmentedValue) => {
     setSelectedOption(v.toString());
   };
+
+  function filterBySelectedOption(array: Post[], selectedOption: string) {
+    if (selectedOption === "전체") {
+      return array;
+    }
+
+    return array.filter((item) =>
+      item.properties.유형.multi_select.some(
+        (type) => type.name === (selectedOption as unknown)
+      )
+    );
+  }
 
   return (
     <section
@@ -40,10 +46,13 @@ export default function Portfolio() {
           onChange={(v) => handleClick(v)}
         />
         <div className="grid grid-col-1 lg:grid-cols-4 gap-4">
-          {[1, 2, 3, 4, 5, 6].map((v) => (
-            <WorkItem workId={v} key={v} />
-          ))}
+          {filterBySelectedOption(data, selectedOption).map(
+            ({ properties, id }) => (
+              <WorkItem properties={properties} key={id} />
+            )
+          )}
         </div>
+
         <Button
           className=" self-center dark:text-white dark:bg-darkCrimsonRed dark:border dark:border-none"
           style={{
