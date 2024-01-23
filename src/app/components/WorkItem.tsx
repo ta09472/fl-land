@@ -25,7 +25,7 @@ export default function WorkItem({ properties }: Props) {
     <>
       <Card
         hoverable
-        className="w-72 h-72 dark:bg-darkSlateGray dark:border dark:border-darkCharcoal overflow-hidden flex flex-col"
+        className="w-72 h-72 dark:bg-darkSlateGray dark:border dark:border-darkCharcoal overflow-hidden flex flex-col "
         cover={
           <Image
             alt="example"
@@ -98,7 +98,7 @@ export default function WorkItem({ properties }: Props) {
           body: "h-[50rem] overflow-scroll",
         }}
       >
-        <div className="flex-1 border border-red-600  ">
+        <div className="flex flex-col justify-center items-center ">
           {properties.사진.files.map((v) => (
             <Image
               alt="example"

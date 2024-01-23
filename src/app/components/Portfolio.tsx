@@ -13,9 +13,14 @@ interface Props {
 export default function Portfolio({ data }: Props) {
   const options = ["전체", "조경", "조명", "도시재생", "도시경관"];
   const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [currentPage, setCurrentPage] = useState(8);
 
   const handleClick = (v: SegmentedValue) => {
     setSelectedOption(v.toString());
+  };
+
+  const renderMore = () => {
+    setCurrentPage((prev) => prev + 8);
   };
 
   function filterBySelectedOption(array: Post[], selectedOption: string) {
@@ -46,21 +51,24 @@ export default function Portfolio({ data }: Props) {
           onChange={(v) => handleClick(v)}
         />
         <div className="grid grid-col-1 lg:grid-cols-4 gap-4">
-          {filterBySelectedOption(data, selectedOption).map(
-            ({ properties, id }) => (
-              <WorkItem properties={properties} key={id} />
-            )
-          )}
+          {filterBySelectedOption(
+            data.slice(0, currentPage),
+            selectedOption
+          ).map(({ properties, id }) => (
+            <WorkItem properties={properties} key={id} />
+          ))}
         </div>
-
-        <Button
-          className=" self-center dark:text-white dark:bg-darkCrimsonRed dark:border dark:border-none"
-          style={{
-            fontWeight: 500,
-          }}
-        >
-          More
-        </Button>
+        <div className="pb-3">
+          <Button
+            className=" self-center dark:text-white dark:bg-darkCrimsonRed dark:border dark:border-none"
+            style={{
+              fontWeight: 500,
+            }}
+            onClick={renderMore}
+          >
+            More
+          </Button>
+        </div>
       </div>
     </section>
   );
