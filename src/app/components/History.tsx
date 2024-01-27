@@ -1,6 +1,6 @@
 "use client";
 
-import { Steps, Tag, Timeline } from "antd";
+import { Timeline } from "antd";
 
 export default function History() {
   return (
@@ -9,9 +9,12 @@ export default function History() {
       className=" flex items-center justify-center min-h-screen text-center text-black relative bg-slate-100 py-52 max-md:pb-16 max-md:pt-48 overflow-hidden lqd-is-in-view dark:bg-darkCharcoal transition-colors duration-300 "
     >
       <div className="">
-        <p className="block text-[2rem] font-extrabold">에프엘이 걸어온 길</p>
+        <p className="block text-[2rem] font-extrabold dark:text-white">
+          에프엘이 걸어온 길
+        </p>
         <div className="mt-4">
           <Timeline
+            className="dark:text-white"
             mode="left"
             items={[
               {
