@@ -21,8 +21,6 @@ export default function WorkItem({ properties }: Props) {
     setIsModalOpen(false);
   };
 
-  console.log(properties);
-
   return (
     <>
       <Card

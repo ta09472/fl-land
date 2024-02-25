@@ -58,10 +58,10 @@ export default function Contact() {
             </div>
             <div className="flex flex-col justify-center  text-left">
               <p className="block font-semibold text-[1rem]">
-                이메일: ㅁㄴㅇ@ㅁㅇㄴ
+                이메일: flland@festival.com
               </p>
               <p className="block font-semibold text-[1rem]">
-                연락처: 010-231=123123
+                연락처: 010-231-123123
               </p>
             </div>
           </div>
