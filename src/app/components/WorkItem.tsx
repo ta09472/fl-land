@@ -1,7 +1,7 @@
 "use client";
 
 import { Properties } from "@/types/post";
-import { Card, Modal, Tag } from "antd";
+import { Card, Modal, Tag, Image as AntdImage } from "antd";
 import Image from "next/image";
 
 import { useState } from "react";
@@ -20,6 +20,8 @@ export default function WorkItem({ properties }: Props) {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  console.log(properties);
 
   return (
     <>
@@ -69,7 +71,7 @@ export default function WorkItem({ properties }: Props) {
       <Modal
         centered
         title={properties.제목.rich_text.at(0)?.plain_text}
-        width={"75rem"}
+        width={"60rem"}
         open={isModalOpen}
         footer={
           <div className="flex flex- justify-between dark:text-white">
@@ -98,16 +100,25 @@ export default function WorkItem({ properties }: Props) {
           body: "h-[50rem] overflow-scroll",
         }}
       >
-        <div className="flex flex-col justify-center items-center ">
+        <div className="flex flex-col justify-center items-center gap-4">
           {properties.사진.files.map((v) => (
-            <Image
-              alt="example"
-              width={240}
-              height={170}
-              className="flex-1"
-              src={v.file?.url}
-              key={v.file?.url}
-            />
+            <div
+              className="p-4 "
+              key={v.file.url}
+              style={{
+                width: "40rem",
+                height: "40rem",
+                position: "relative",
+              }}
+            >
+              <Image
+                objectFit="contain"
+                src={v.file?.url}
+                className="rounded-md"
+                alt="이미지"
+                fill
+              />
+            </div>
           ))}
         </div>
       </Modal>
