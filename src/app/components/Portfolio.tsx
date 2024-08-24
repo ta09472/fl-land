@@ -35,10 +35,6 @@ export default function Portfolio({ data }: Props) {
     );
   }
 
-  console.log(
-    filterBySelectedOption(data.slice(0, currentPage), selectedOption)
-  );
-
   return (
     <section
       id="portfolio"

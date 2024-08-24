@@ -22,7 +22,7 @@ export default function Home() {
 
         {
           next: {
-            revalidate: 30,
+            revalidate: 3600,
           },
         }
       );
