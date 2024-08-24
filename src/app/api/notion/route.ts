@@ -11,5 +11,7 @@ export async function GET() {
     database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID ?? "",
   });
 
+  console.log(response);
+
   return NextResponse.json(response);
 }

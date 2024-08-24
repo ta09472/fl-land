@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["prod-files-secure.s3.us-west-2.amazonaws.com"],
+    domains: [
+      "swamp-output-6ff.notion.site",
+      "prod-files-secure.s3.us-west-2.amazonaws.com",
+    ],
   },
 };
 

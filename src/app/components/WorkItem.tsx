@@ -8,9 +8,10 @@ import { useState } from "react";
 
 interface Props {
   properties: Properties;
+  spaceId: string;
 }
 
-export default function WorkItem({ properties }: Props) {
+export default function WorkItem({ properties, spaceId }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -20,6 +21,17 @@ export default function WorkItem({ properties }: Props) {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  function convertToNotionProxyURL(originalUrl: string, userId = "") {
+    // Step 1: AWS S3 URL에서 파일 경로 추출
+    const url = new URL(originalUrl);
+    const filePath = encodeURIComponent(url.origin + url.pathname);
+
+    // Step 2: Notion Proxy URL 생성
+    const notionProxyUrl = `https://swamp-output-6ff.notion.site/image/${filePath}?id=${spaceId}&table=block&spaceId=${""}&width=40&userId=${""}&cache=v2`;
+
+    return notionProxyUrl;
+  }
 
   return (
     <>
@@ -33,7 +45,10 @@ export default function WorkItem({ properties }: Props) {
             height={200}
             layout="fixed"
             className=" lg:w-[14rem] lg:h-[12.4rem] w-[10rem] h-[12rem] flex-1"
-            src={properties.사진.files.at(0)?.file?.url ?? ""}
+            // src="https://swamp-output-6ff.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F13d6f226-0c34-4164-98b4-8fa827bca8be%2F04626e4a-2546-4712-acce-775a13888e97%2FDALLE_2024-02-23_18.26.36_-_An_illustration_of_a_Korean_kite_festival_with_families_and_children_flying_traditional_rectangular_Korean_kites_against_a_clear_blue_sky._The_scene_.webp?id=ebf89e4c-4a25-4448-bb77-b38aff99ed5a&table=block&spaceId=13d6f226-0c34-4164-98b4-8fa827bca8be&width=40&userId=&cache=v2"
+            src={convertToNotionProxyURL(
+              properties.사진.files.at(0)?.file?.url ?? ""
+            )}
           />
         }
         onClick={showModal}
@@ -111,7 +126,7 @@ export default function WorkItem({ properties }: Props) {
             >
               <Image
                 objectFit="contain"
-                src={v.file?.url}
+                src={convertToNotionProxyURL(v.file?.url)}
                 className="rounded-md"
                 alt="이미지"
                 fill

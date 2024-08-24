@@ -35,6 +35,10 @@ export default function Portfolio({ data }: Props) {
     );
   }
 
+  console.log(
+    filterBySelectedOption(data.slice(0, currentPage), selectedOption)
+  );
+
   return (
     <section
       id="portfolio"
@@ -55,7 +59,7 @@ export default function Portfolio({ data }: Props) {
             data.slice(0, currentPage),
             selectedOption
           ).map(({ properties, id }) => (
-            <WorkItem properties={properties} key={id} />
+            <WorkItem properties={properties} key={id} spaceId={id} />
           ))}
         </div>
         <div className="pb-3">
