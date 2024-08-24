@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### **프로젝트 개요**
 
-## Getting Started
+- **프로젝트 명칭**: 조형,조경 전문 회사 사이트
+- **목표**: 조형 및 조경 디자인 서비스 제공 회사의 전문성과 포트폴리오를 강조하는 웹사이트 구축
 
-First, run the development server:
+https://fl-land-wno4.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **사용된 주요 기술**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Frontend**:
+    - **Next.js & React**:
+        - React 기반의 프레임워크인 Next.js 사용
+        - 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR) 지원으로 빠른 로딩 시간과 최적화된 사용자 경험 제공
+2. **Backend & Database**:
+    1. 관리포인트를 줄이기 위하여 별도의 어드민 페이지를 제공하지 않고 노션 데이터베이스를 이용하여 CRUD를 제공하였음
+    - **Notion Database**:
+    - 유연하고 사용하기 쉬운 Notion 데이터베이스를 백엔드 저장소로 활용
+    - 데이터 구조의 간소화와 쉬운 관리 가능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 목표
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 사용자가 웹사이트를 통해 에프엘의 전문성과 포트폴리오를 쉽게 이해할 수 있도록 합니다.
+- Notion DataBase API를 활용하여 웹사이트 관리자가 사진 및 콘텐츠를 손쉽게 업데이트할 수 있게 합니다.
+- 반응형 디자인을 구현하여 다양한 디바이스에서의 접근성을 보장합니다.
 
-## Learn More
+### 프로젝트 결과
 
-To learn more about Next.js, take a look at the following resources:
+- 간결하고 직관적인 사용자 인터페이스 설계를 통해 방문자가 필요한 정보를 쉽게 찾을 수 있게 되었습니다.
+- Notion DataBase API의 적용으로 콘텐츠 관리의 효율성이 대폭 향상되었습니다.
+- 카카오 맵 API를 통해 사용자가 회사 위치를 쉽게 파악할 수 있게 되었습니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://youtu.be/bxIH76nhJ-Y
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+회사측 데이터가 준비되지 않아 임의의 데이터들로 채워넣었습니다
