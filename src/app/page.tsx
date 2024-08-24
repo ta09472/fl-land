@@ -24,7 +24,6 @@ export default function Home() {
           next: {
             revalidate: 30,
           },
-          cache: "force-cache",
         }
       );
       return await res.json();
