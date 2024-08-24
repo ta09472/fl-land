@@ -29,7 +29,6 @@ export default function WorkItem({ properties, spaceId }: Props) {
         const url = new URL(originalUrl);
         return url;
       } catch (error) {
-        console.error("Invalid URL:", error.message);
         // 여기에서 기본값을 반환하거나, null을 반환할 수 있음
         return "";
       }
