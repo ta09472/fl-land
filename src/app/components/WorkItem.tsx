@@ -44,7 +44,7 @@ export default function WorkItem({ properties, spaceId }: Props) {
     const filePath = encodeURIComponent(url.origin + url.pathname);
 
     // Step 2: Notion Proxy URL 생성
-    const notionProxyUrl = `https://swamp-output-6ff.notion.site/image/${filePath}?id=${spaceId}&table=block&width=40&cache=v2`;
+    const notionProxyUrl = `https://swamp-output-6ff.notion.site/image/${filePath}?id=${spaceId}&table=block&cache=v2`;
 
     return notionProxyUrl;
   }
