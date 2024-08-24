@@ -23,14 +23,28 @@ export default function WorkItem({ properties, spaceId }: Props) {
   };
 
   function convertToNotionProxyURL(originalUrl: string, userId = "") {
+    function createSafeURL(originalUrl: string) {
+      try {
+        // 유효한 URL인지 확인하고 URL 객체 생성
+        const url = new URL(originalUrl);
+        return url;
+      } catch (error) {
+        console.error("Invalid URL:", error.message);
+        // 여기에서 기본값을 반환하거나, null을 반환할 수 있음
+        return null;
+      }
+    }
+
     // Step 1: AWS S3 URL에서 파일 경로 추출
-    const url = new URL(originalUrl);
-    const filePath = encodeURIComponent(url.origin + url.pathname);
 
-    // Step 2: Notion Proxy URL 생성
-    const notionProxyUrl = `https://swamp-output-6ff.notion.site/image/${filePath}?id=${spaceId}&table=block&spaceId=${""}&width=40&userId=${""}&cache=v2`;
+    const url = createSafeURL(originalUrl);
+    console.log(url);
+    // const filePath = encodeURIComponent(url.origin + url.pathname);
 
-    return notionProxyUrl;
+    // // Step 2: Notion Proxy URL 생성
+    // const notionProxyUrl = `https://swamp-output-6ff.notion.site/image/${filePath}?id=${spaceId}&table=block&width=40&cache=v2`;
+
+    return originalUrl;
   }
 
   return (

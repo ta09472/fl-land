@@ -21,9 +21,9 @@ export default function Home() {
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`,
 
         {
-          // next: {
-          //   revalidate: 3600,
-          // },
+          next: {
+            revalidate: 30,
+          },
         }
       );
       return await res.json();
