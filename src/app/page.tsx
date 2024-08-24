@@ -19,7 +19,11 @@ export default function Home() {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/notion`,
+
         {
+          next: {
+            revalidate: 30,
+          },
           cache: "force-cache",
         }
       );
